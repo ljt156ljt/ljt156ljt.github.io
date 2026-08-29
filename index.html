@@ -1067,7 +1067,7 @@
     <!-- Featured -->
     <div class="featured-work" data-type="landscape" data-index="0" onclick="openVideo('landscape',0)">
       <div class="featured-thumb">
-        <img src="assets/cover_landscape1.jpg" alt="会议视频成片">
+        <img src="assets/cover_landscape1.jpg" alt="会议视频成片" loading="lazy">
         <div class="cover-overlay">
           <div class="cover-title">
             会议视频成片
@@ -1086,7 +1086,7 @@
     <div class="works-grid">
       <div class="work-card" data-type="landscape" data-index="1" onclick="openVideo('landscape',1)">
         <div class="work-thumb">
-          <img src="assets/cover_landscape2.jpg" alt="武术馆宣传片">
+          <img src="assets/cover_landscape2.jpg" alt="武术馆宣传片" loading="lazy">
           <div class="cover-overlay">
             <div class="cover-title">
               武术馆宣传片
@@ -1103,7 +1103,7 @@
 
       <div class="work-card" data-type="landscape" data-index="2" onclick="openVideo('landscape',2)">
         <div class="work-thumb">
-          <img src="assets/cover_landscape3.jpg" alt="摄影教程短片">
+          <img src="assets/cover_landscape3.jpg" alt="摄影教程短片" loading="lazy">
           <div class="cover-overlay">
             <div class="cover-title">
               摄影教程短片
@@ -1120,7 +1120,7 @@
 
       <div class="work-card" data-type="landscape" data-index="3" onclick="openVideo('landscape',3)">
         <div class="work-thumb">
-          <img src="assets/cover_landscape4.jpg" alt="活动拍摄短片">
+          <img src="assets/cover_landscape4.jpg" alt="活动拍摄短片" loading="lazy">
           <div class="cover-overlay">
             <div class="cover-title">
               活动拍摄短片
@@ -1137,7 +1137,7 @@
 
       <div class="work-card" data-type="landscape" data-index="4" onclick="openVideo('landscape',4)">
         <div class="work-thumb">
-          <img src="assets/cover_landscape5.jpg" alt="户外跟拍作品">
+          <img src="assets/cover_landscape5.jpg" alt="户外跟拍作品" loading="lazy">
           <div class="cover-overlay">
             <div class="cover-title">
               户外跟拍作品
@@ -1167,7 +1167,7 @@
     <div class="portrait-grid">
       <div class="portrait-card" data-type="portrait" data-index="0" onclick="openVideo('portrait',0)">
         <div class="portrait-thumb">
-          <img src="assets/cover_portrait1.jpg" alt="口播类短视频">
+          <img src="assets/cover_portrait1.jpg" alt="口播类短视频" loading="lazy">
           <div class="cover-overlay">
             <div class="cover-title">
               口播类
@@ -1183,7 +1183,7 @@
 
       <div class="portrait-card" data-type="portrait" data-index="1" onclick="openVideo('portrait',1)">
         <div class="portrait-thumb">
-          <img src="assets/cover_portrait2.jpg" alt="产品展示视频">
+          <img src="assets/cover_portrait2.jpg" alt="产品展示视频" loading="lazy">
           <div class="cover-overlay">
             <div class="cover-title">
               产品展示
@@ -1199,7 +1199,7 @@
 
       <div class="portrait-card" data-type="portrait" data-index="2" onclick="openVideo('portrait',2)">
         <div class="portrait-thumb">
-          <img src="assets/cover_portrait3.jpg" alt="教程类短视频">
+          <img src="assets/cover_portrait3.jpg" alt="教程类短视频" loading="lazy">
           <div class="cover-overlay">
             <div class="cover-title">
               教程类
@@ -1235,7 +1235,7 @@
         </a>
       </div>
       <div class="douyin-qr">
-        <img src="assets/douyin-qr.jpg" alt="抖音二维码">
+        <img src="assets/douyin-qr.jpg" alt="抖音二维码" loading="lazy">
       </div>
     </div>
   </div>
@@ -1254,7 +1254,7 @@
       <div class="ai-card" data-type="ai" data-index="0" onclick="openVideo('ai',0)">
         <div class="ai-thumb">
           <span class="ai-badge">AI</span>
-          <img src="assets/aicover1.png" alt="滑板赶课记">
+          <img src="assets/aicover1.jpg" alt="滑板赶课记" loading="lazy">
         </div>
         <div class="ai-info">
           <div class="ai-title">滑板赶课记</div>
@@ -1265,7 +1265,7 @@
       <div class="ai-card" data-type="ai" data-index="1" onclick="openVideo('ai',1)">
         <div class="ai-thumb">
           <span class="ai-badge">AI</span>
-          <img src="assets/aicover2.jpeg" alt="教程视频">
+          <img src="assets/aicover2.jpg" alt="教程视频" loading="lazy">
         </div>
         <div class="ai-info">
           <div class="ai-title">教程视频</div>
@@ -1276,7 +1276,7 @@
       <div class="ai-card" data-type="ai" data-index="2" onclick="openVideo('ai',2)">
         <div class="ai-thumb">
           <span class="ai-badge">AI</span>
-          <img src="assets/aicover3.png" alt="AI电影海报">
+          <img src="assets/aicover3.jpg" alt="AI电影海报" loading="lazy">
         </div>
         <div class="ai-info">
           <div class="ai-title">AI电影海报</div>
@@ -1290,7 +1290,7 @@
 <!-- About -->
 <section id="about" class="about-section">
   <div class="about-bg-art">
-    <img src="assets/collage-statue.jpg" alt="装饰">
+    <img src="assets/collage-statue.jpg" alt="装饰" loading="lazy">
   </div>
   <div class="section-container">
     <div class="about-content">
@@ -1331,31 +1331,32 @@
       <div class="c" id="vmCat"></div>
     </div>
     <button class="video-close-btn" id="vmClose" aria-label="关闭" onclick="closeVideo(); event.stopPropagation();">×</button>
-    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="metadata" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" draggable="false" poster="">
+    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="none" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" draggable="false" poster="">
       您的浏览器不支持视频播放
     </video>
   </div>
 </div>
 
 <script>
+  var CDN = 'https://cdn.jsdelivr.net/gh/ljt156ljt/ljt156ljt.github.io@main';
   var landscapeWorks = [
-    { title: '会议视频成片', category: '会议活动', src: 'assets/compressed/landscape1.mp4', poster: 'assets/cover_landscape1.jpg' },
-    { title: '武术馆宣传片', category: '品牌宣传', src: 'assets/compressed/landscape2.mp4', poster: 'assets/cover_landscape2.jpg' },
-    { title: '摄影教程短片', category: '教程教学', src: 'assets/compressed/landscape3.mp4', poster: 'assets/cover_landscape3.jpg' },
-    { title: '活动拍摄短片', category: '活动记录', src: 'assets/compressed/landscape4.mp4', poster: 'assets/cover_landscape4.jpg' },
-    { title: '户外跟拍作品', category: '户外拍摄', src: 'assets/compressed/landscape5.mp4', poster: 'assets/cover_landscape5.jpg' }
+    { title: '会议视频成片', category: '会议活动', src: CDN + '/assets/compressed/landscape1.mp4', poster: CDN + '/assets/posters/landscape1.jpg' },
+    { title: '武术馆宣传片', category: '品牌宣传', src: CDN + '/assets/compressed/landscape2.mp4', poster: CDN + '/assets/posters/landscape2.jpg' },
+    { title: '摄影教程短片', category: '教程教学', src: CDN + '/assets/compressed/landscape3.mp4', poster: CDN + '/assets/posters/landscape3.jpg' },
+    { title: '活动拍摄短片', category: '活动记录', src: CDN + '/assets/compressed/landscape4.mp4', poster: CDN + '/assets/posters/landscape4.jpg' },
+    { title: '户外跟拍作品', category: '户外拍摄', src: CDN + '/assets/compressed/landscape5.mp4', poster: CDN + '/assets/posters/landscape5.jpg' }
   ];
 
   var portraitWorks = [
-    { title: '口播类短视频', category: '抖音短视频', src: 'assets/compressed/portrait1.mp4', poster: 'assets/cover_portrait1.jpg' },
-    { title: '产品展示视频', category: '抖音短视频', src: 'assets/compressed/portrait2.mp4', poster: 'assets/cover_portrait2.jpg' },
-    { title: '教程类短视频', category: '抖音短视频', src: 'assets/compressed/portrait3.mp4', poster: 'assets/cover_portrait3.jpg' }
+    { title: '口播类短视频', category: '抖音短视频', src: CDN + '/assets/compressed/portrait1.mp4', poster: CDN + '/assets/posters/portrait1.jpg' },
+    { title: '产品展示视频', category: '抖音短视频', src: CDN + '/assets/compressed/portrait2.mp4', poster: CDN + '/assets/posters/portrait2.jpg' },
+    { title: '教程类短视频', category: '抖音短视频', src: CDN + '/assets/compressed/portrait3.mp4', poster: CDN + '/assets/posters/portrait3.jpg' }
   ];
 
   var aiWorks = [
-    { title: '滑板赶课记', category: 'AI动画短片', src: 'assets/compressed/aiwork1.mp4', poster: 'assets/aicover1.png' },
-    { title: '教程视频', category: 'AI创意短片', src: 'assets/compressed/aiwork2.mp4', poster: 'assets/aicover2.jpeg' },
-    { title: 'AI电影海报', category: 'AI视觉作品', src: 'assets/compressed/aiwork3.mp4', poster: 'assets/aicover3.png' }
+    { title: '滑板赶课记', category: 'AI动画短片', src: CDN + '/assets/compressed/aiwork1.mp4', poster: CDN + '/assets/posters/aiwork1.jpg' },
+    { title: '教程视频', category: 'AI创意短片', src: CDN + '/assets/compressed/aiwork2.mp4', poster: CDN + '/assets/posters/aiwork2.jpg' },
+    { title: 'AI电影海报', category: 'AI视觉作品', src: CDN + '/assets/compressed/aiwork3.mp4', poster: CDN + '/assets/posters/aiwork3.jpg' }
   ];
 
   var modal = document.getElementById('videoModal');
