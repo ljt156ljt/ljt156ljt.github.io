@@ -1350,7 +1350,7 @@
       <div class="c" id="vmCat"></div>
     </div>
     <button class="video-close-btn" id="vmClose" aria-label="关闭" onclick="closeVideo(); event.stopPropagation();">×</button>
-    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="none" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" draggable="false" poster="">
+    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="metadata" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" draggable="false" poster="">
       您的浏览器不支持视频播放
     </video>
   </div>
@@ -1367,14 +1367,14 @@
   ];
 
   var portraitWorks = [
-    { title: '口播类短视频', category: '抖音短视频', src: CDN + '/assets/compressed/portrait1.mp4', poster: CDN + '/assets/posters/portrait1.jpg' },
+    { title: '口播类短视频', category: '抖音短视频', src: 'https://ljt156ljt.github.io/assets/compressed/portrait1.mp4', poster: CDN + '/assets/posters/portrait1.jpg' },
     { title: '产品展示视频', category: '抖音短视频', src: CDN + '/assets/compressed/portrait2.mp4', poster: CDN + '/assets/posters/portrait2.jpg' },
     { title: '教程类短视频', category: '抖音短视频', src: CDN + '/assets/compressed/portrait3.mp4', poster: CDN + '/assets/posters/portrait3.jpg' }
   ];
 
   var aiWorks = [
     { title: '滑板赶课记', category: 'AI动画短片', src: 'https://ljt156ljt.github.io/assets/compressed/aiwork1_new.mp4', poster: CDN + '/assets/posters/aiwork1_new.jpg' },
-    { title: '教程视频', category: 'AI创意短片', src: CDN + '/assets/compressed/aiwork2_new.mp4', poster: CDN + '/assets/posters/aiwork2_new.jpg' },
+    { title: '教程视频', category: 'AI创意短片', src: 'https://ljt156ljt.github.io/assets/compressed/aiwork2_new.mp4', poster: CDN + '/assets/posters/aiwork2_new.jpg' },
     { title: 'AI电影海报', category: 'AI视觉作品', src: CDN + '/assets/compressed/aiwork3.mp4', poster: CDN + '/assets/posters/aiwork3.jpg' }
   ];
 
@@ -1416,7 +1416,13 @@
     vmVideo.setAttribute('poster', work.poster);
     vmVideo.src = work.src;
     vmVideo.load();
-    vmVideo.play();
+    var playPromise = vmVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function() {
+        vmVideo.muted = true;
+        vmVideo.play();
+      });
+    }
   }
 
   function closeVideo() {
