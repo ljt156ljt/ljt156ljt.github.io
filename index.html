@@ -857,9 +857,11 @@
     position: relative;
     z-index: 1;
     pointer-events: auto;
-    -webkit-user-select: auto;
-    user-select: auto;
-    -webkit-touch-callout: default;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    user-drag: none;
   }
 
   .video-close-btn {
@@ -1325,7 +1327,7 @@
       <div class="c" id="vmCat"></div>
     </div>
     <button class="video-close-btn" id="vmClose" aria-label="关闭" onclick="closeVideo(); event.stopPropagation();">×</button>
-    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="auto" poster="">
+    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="auto" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" draggable="false" poster="">
       您的浏览器不支持视频播放
     </video>
   </div>
