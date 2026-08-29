@@ -918,6 +918,22 @@
     margin-top: 2px;
   }
 
+  .video-watermark {
+    position: absolute;
+    top: 50px;
+    left: 16px;
+    z-index: 5;
+    pointer-events: none;
+    color: rgba(255,255,255,0.55);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 1px rgba(0,0,0,0.5);
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
   /* Responsive */
   @media (max-width: 834px) {
     .nav-links li:not(:last-child) {
@@ -1334,6 +1350,7 @@
       <div class="c" id="vmCat"></div>
     </div>
     <button class="video-close-btn" id="vmClose" aria-label="关闭" onclick="closeVideo(); event.stopPropagation();">×</button>
+    <div class="video-watermark" id="vmWatermark">MANGO CHAO ROU</div>
     <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="none" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" draggable="false" poster="">
       您的浏览器不支持视频播放
     </video>
@@ -1343,7 +1360,7 @@
 <script>
   var CDN = 'https://cdn.jsdelivr.net/gh/ljt156ljt/ljt156ljt.github.io@main';
   var landscapeWorks = [
-    { title: '会议视频成片', category: '会议活动', src: CDN + '/assets/compressed/landscape1_hd.mp4', poster: CDN + '/assets/posters/landscape1_hd.jpg' },
+    { title: '会议视频成片', category: '会议活动', src: CDN + '/assets/compressed/landscape1_uhd.mp4', poster: CDN + '/assets/posters/landscape1_uhd.jpg' },
     { title: '情绪短片', category: '创意短片', src: CDN + '/assets/compressed/landscape2.mp4', poster: CDN + '/assets/posters/landscape2.jpg' },
     { title: '摄影教程短片', category: '教程教学', src: CDN + '/assets/compressed/landscape3.mp4', poster: CDN + '/assets/posters/landscape3.jpg' },
     { title: '活动拍摄短片', category: '活动记录', src: CDN + '/assets/compressed/landscape4.mp4', poster: CDN + '/assets/posters/landscape4.jpg' },
