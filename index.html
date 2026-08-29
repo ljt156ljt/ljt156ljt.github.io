@@ -868,8 +868,13 @@
   }
 
   video::-webkit-media-controls-download-button { display: none !important; }
+  video::-webkit-media-controls-overflow-button { display: none !important; }
   video::-webkit-media-controls-enclosure { overflow: hidden !important; }
-  video::-webkit-media-controls-panel { width: calc(100% + 30px); }
+  video::-webkit-media-controls-panel { width: calc(100% + 30px); overflow: hidden !important; }
+  video::-internal-media-controls-download-button { display: none !important; }
+  video::-internal-media-controls-overflow-button { display: none !important; }
+  video::-internal-media-controls-overflow-list { display: none !important; }
+  video::-webkit-media-controls-picture-in-picture-button { display: none !important; }
 
   .video-close-btn {
     position: absolute;
@@ -1362,14 +1367,14 @@
 </footer>
 
 <!-- 视频弹窗 - 极简全屏 -->
-<div class="video-modal" id="videoModal" onclick="if(event.target===this)closeVideo()">
-  <div class="video-modal-inner">
+<div class="video-modal" id="videoModal" onclick="if(event.target===this)closeVideo()" oncontextmenu="return false">
+  <div class="video-modal-inner" oncontextmenu="return false" ondragstart="return false">
     <div class="video-title-bar">
       <div class="t" id="vmTitle">作品标题</div>
       <div class="c" id="vmCat"></div>
     </div>
     <button class="video-close-btn" id="vmClose" aria-label="关闭" onclick="closeVideo(); event.stopPropagation();">×</button>
-    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="metadata" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" draggable="false" poster="">
+    <video id="vmVideo" controls playsinline webkit-playsinline x5-playsinline preload="metadata" controlslist="nodownload noremoteplayback noplaybackrate" disablepictureinpicture oncontextmenu="return false" ondragstart="return false" draggable="false" poster="">
       您的浏览器不支持视频播放
     </video>
     <button class="video-mute-btn" id="vmMute" onclick="toggleMute(); event.stopPropagation();">
@@ -1468,6 +1473,17 @@
     vmMuteBtn.querySelector('.icon-unmuted').style.display = vmVideo.muted ? 'none' : 'block';
     vmMuteBtn.querySelector('.icon-muted').style.display = vmVideo.muted ? 'block' : 'none';
   }
+
+  // 全局禁止视频下载
+  document.getElementById('videoModal').addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+  document.getElementById('videoModal').addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
+  // 拦截快捷键下载 (Ctrl+S)
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 's' && (e.ctrlKey || e.metaKey) && modal.classList.contains('show')) {
+      e.preventDefault();
+      return false;
+    }
+  });
 </script>
 
 </body>
